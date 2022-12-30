@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Dialog } from "@headlessui/react";
 import FeatureList from "../components/FeatureList";
 import ViewWrapper from "../components/ViewWrapper";
 const navigation = [
@@ -9,7 +8,7 @@ const navigation = [
   { name: "Company", href: "#" },
 ];
 
-export default function Example() {
+const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -139,4 +138,6 @@ export default function Example() {
       </div>
     </ViewWrapper>
   );
-}
+};
+
+export default Index;
