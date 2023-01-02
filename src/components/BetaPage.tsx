@@ -1,6 +1,9 @@
 import React from "react";
+import { trpc } from "../utils/trpc";
 
 const BetaPage = () => {
+  const betakeys = trpc.beta.getkeys.useQuery();
+
   return (
     <div className="relative">
       <div
@@ -14,8 +17,8 @@ const BetaPage = () => {
               We are Currently in Beta
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-cyan-100">
-              There are currently 272 beta keys left. Enter your email below to
-              receive a beta key.
+              There are currently {betakeys.data?.keys} beta keys left. Enter
+              your email below to receive a beta key.
             </p>
           </div>
           <form>

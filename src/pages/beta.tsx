@@ -1,5 +1,5 @@
 import React from "react";
-import BetaPage from "../components/beta";
+import BetaPage from "../components/BetaPage";
 import ViewWrapper from "../components/ViewWrapper";
 const beta = () => {
   return (
