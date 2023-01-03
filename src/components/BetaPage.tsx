@@ -1,11 +1,12 @@
 import React from "react";
 import { trpc } from "../utils/trpc";
 import { useForm } from "react-hook-form";
+import SuccessBar from "./SuccessBar";
 
 const BetaPage = () => {
   const betakeys = trpc.beta.getkeys.useQuery();
 
-  const mutation = trpc.beta.registerkey.useMutation();
+  const registerkey = trpc.beta.registerkey.useMutation();
 
   const { register, handleSubmit } = useForm();
 
@@ -14,7 +15,7 @@ const BetaPage = () => {
 
     console.log(email);
 
-    mutation.mutate(data);
+    registerkey.mutate(data);
   };
 
   return (
@@ -24,14 +25,17 @@ const BetaPage = () => {
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+        {registerkey.isError ||
+          (registerkey.isSuccess && (
+            <>
+              <SuccessBar success={registerkey.isSuccess} />
+              {/* <SuccessBar success={!registerkey.isSuccess} /> */}
+            </>
+          ))}
         <div className="rounded-3xl bg-zinc-800 bg-gradient-to-l py-10 px-6 sm:py-16 sm:px-12 lg:flex lg:items-center lg:py-20 lg:px-20">
           <div className="lg:w-0 lg:flex-1">
             <h2 className="text-3xl font-extrabold tracking-tight text-white">
               We are Currently in Beta
-              {mutation.error && (
-                <p>Something went wrong! {mutation.error.message}</p>
-              )}
-              {JSON.stringify(mutation.data)}
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-cyan-100">
               There are currently {betakeys.data?.keys} beta keys left. Enter
