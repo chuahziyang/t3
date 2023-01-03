@@ -1,8 +1,21 @@
 import React from "react";
 import { trpc } from "../utils/trpc";
+import { useForm } from "react-hook-form";
 
 const BetaPage = () => {
   const betakeys = trpc.beta.getkeys.useQuery();
+
+  const mutation = trpc.beta.registerkey.useMutation();
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (data: any) => {
+    const email = data.email;
+
+    console.log(email);
+
+    mutation.mutate(data);
+  };
 
   return (
     <div className="relative">
@@ -15,22 +28,25 @@ const BetaPage = () => {
           <div className="lg:w-0 lg:flex-1">
             <h2 className="text-3xl font-extrabold tracking-tight text-white">
               We are Currently in Beta
+              {mutation.error && (
+                <p>Something went wrong! {mutation.error.message}</p>
+              )}
+              {JSON.stringify(mutation.data)}
             </h2>
             <p className="mt-4 max-w-3xl text-lg text-cyan-100">
               There are currently {betakeys.data?.keys} beta keys left. Enter
               your email below to receive a beta key.
             </p>
           </div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
               <div className="sm:flex">
                 <label htmlFor="email" className="sr-only">
                   Email address
                 </label>
                 <input
-                  id="email"
+                  {...register("email")}
                   name="email"
-                  type="email"
                   className="placeholder-warm-gray-500 w-full rounded-md border-white px-5 py-3 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-cyan-700"
                   placeholder="Enter your email"
                 />
@@ -41,12 +57,9 @@ const BetaPage = () => {
                   Send me a key
                 </button>
               </div>
-              <h3
-                className="mt-xs block font-medium text-red-500"
-                name="email"
-              />
+              <h3 className="mt-xs block font-medium text-red-500" />
               <p className="mt-3 text-sm text-cyan-100">
-                We will never spam you at this email address.{" "}
+                We will never spam you at this email address.
               </p>
             </div>
           </form>

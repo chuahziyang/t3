@@ -8,4 +8,19 @@ export const betaRouter = router({
       keys: 478,
     };
   }),
+  registerkey: publicProcedure
+    .input(
+      z.object({
+        email: z.string(),
+      })
+    )
+    .mutation(({ input }) => {
+      console.log("asdasd");
+      return {
+        user: {
+          name: input.email,
+          role: "ADMIN",
+        },
+      };
+    }),
 });
