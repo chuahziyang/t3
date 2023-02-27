@@ -9,7 +9,7 @@ interface Props {
 
 const ViewWrapper: NextPage<Props> = ({ children, flex }) => {
   return (
-    <div className="bg-back bg-dotted-spacing-8 bg-dotted-gray-800">
+    <div className="bg-back bg-dotted-spacing-8 bg-dotted-slate-700">
       <div
         className={classNames(
           `mx-auto min-h-screen max-w-7xl sm:px-6 lg:px-8`,
