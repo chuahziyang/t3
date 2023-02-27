@@ -145,7 +145,7 @@ export function Header() {
                 Sign in
               </Link>
             </li>
-            <li className="ml-auto md:ml-8">
+            <li className="ml-auto text-gray-200 md:ml-8">
               {/* <ButtonLink href="/register" color="blue"> */}
               <span>
                 Get started<span className="hidden lg:inline"> today</span>
