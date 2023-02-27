@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FeatureList from "../components/FeatureList";
 import ViewWrapper from "../components/ViewWrapper";
+import { Header } from "../components/Header";
 const navigation = [
   { name: "Product", href: "#" },
   { name: "Features", href: "#" },
@@ -13,6 +14,7 @@ const Index = () => {
 
   return (
     <ViewWrapper flex={false}>
+      <Header />
       <div className="isolate ">
         <div className="px-6 pt-6 lg:px-8">
           <div>
