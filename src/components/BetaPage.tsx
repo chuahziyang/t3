@@ -19,7 +19,7 @@ const BetaPage = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-green-200">
       <div
         className="bg-warm-gray-50 absolute left-0 right-0 h-1/2"
         aria-hidden="true"
