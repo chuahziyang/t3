@@ -19,7 +19,7 @@ const BetaPage = () => {
   };
 
   return (
-    <div className="relative bg-green-200">
+    <div className="relative">
       <div
         className="bg-warm-gray-50 absolute left-0 right-0 h-1/2"
         aria-hidden="true"
@@ -32,8 +32,8 @@ const BetaPage = () => {
               {/* <SuccessBar success={!registerkey.isSuccess} /> */}
             </>
           ))}
-        <div className="rounded-3xl bg-zinc-800 bg-gradient-to-l py-10 px-6 sm:py-16 sm:px-12 lg:flex lg:items-center lg:py-20 lg:px-20">
-          <div className="lg:w-0 lg:flex-1">
+        <div className="rounded-3xl bg-zinc-800 bg-gradient-to-l py-10 px-6 sm:py-16 sm:px-12    ">
+          <div className="">
             <h2 className="text-3xl font-extrabold tracking-tight text-white">
               We are Currently in Beta
             </h2>
@@ -43,7 +43,7 @@ const BetaPage = () => {
             </p>
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
+            <div className="mt-12 sm:w-full sm:max-w-md ">
               <div className="sm:flex">
                 <label htmlFor="email" className="sr-only">
                   Email address
