@@ -116,7 +116,7 @@ export function Header() {
             <li className="ml-12 hidden md:block">
               <Link
                 href="#features"
-                className="rounded-lg py-1 px-2 text-gray-200 hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-lg py-1 px-2 text-slate-200 hover:bg-slate-700 hover:text-slate-100"
               >
                 Features
               </Link>
@@ -124,7 +124,7 @@ export function Header() {
             <li className="ml-6 hidden md:block">
               <Link
                 href="#testimonials"
-                className="rounded-lg py-1 px-2 text-gray-200 hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-lg py-1 px-2 text-slate-200 hover:bg-slate-700 hover:text-slate-100"
               >
                 Testimonials
               </Link>
@@ -132,7 +132,7 @@ export function Header() {
             <li className="ml-6 hidden md:block">
               <Link
                 href="#pricing"
-                className="rounded-lg py-1 px-2 text-gray-200 hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-lg py-1 px-2 text-slate-200 hover:bg-slate-700 hover:text-slate-100"
               >
                 Pricing
               </Link>
@@ -140,7 +140,7 @@ export function Header() {
             <li className="ml-auto hidden md:block">
               <Link
                 href="/login"
-                className="rounded-lg py-1 px-2 text-gray-200 hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-lg py-1 px-2 text-slate-200 hover:bg-slate-700 hover:text-slate-100"
               >
                 Sign in
               </Link>
